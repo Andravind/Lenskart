@@ -14,6 +14,29 @@ public class Filter {
     @Expose
     private String id;
 
+    private Boolean isSelectable = true;
+
+    private String unSelectableId;
+
+    public String getUnSelectableId() {
+        return unSelectableId;
+    }
+
+    public void setUnSelectableId(String unSelectableId) {
+        this.unSelectableId = unSelectableId;
+    }
+
+    public Boolean getSelectable() {
+        return isSelectable;
+    }
+    public void setIsSelectable(){
+        this.isSelectable=true;
+    }
+
+    public void setSelectable(Boolean selectable) {
+        isSelectable = selectable;
+    }
+
     public String getName() {
         return name;
     }
