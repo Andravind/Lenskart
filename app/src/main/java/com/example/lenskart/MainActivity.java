@@ -91,6 +91,15 @@ public class MainActivity extends AppCompatActivity {
                     if (unSelectable != null) {
                         String[] splits = unSelectable.split(",");
                         if (splits[0].equals("1")) {
+                            if (isTypeUpdated.equals("3")) {
+                                isTypeUpdated = "";
+                                List<Filter> lstff = hashLst.get("3");
+                                assert lstff != null;
+                                for (int i = 0; i < lstff.size(); i++) {
+                                    lstff.get(i).setSelectable(true);
+                                    sizeAdapter.notifyDataSetChanged();
+                                }
+                            }
                             isTypeUpdated = "1";
                             List<Filter> lstff = hashLst.get("1");
                             assert lstff != null;
@@ -101,6 +110,15 @@ public class MainActivity extends AppCompatActivity {
                                 }
                             }
                         } else if (splits[0].equals("3")) {
+                            if(isTypeUpdated.equals("1")){
+                                isTypeUpdated = "";
+                                List<Filter> lstff = hashLst.get("1");
+                                assert lstff != null;
+                                for (int i = 0; i < lstff.size(); i++) {
+                                    lstff.get(i).setSelectable(true);
+                                    shapeAdapter.notifyDataSetChanged();
+                                }
+                            }
                             isTypeUpdated = "3";
                             List<Filter> lstff = hashLst.get("3");
                             assert lstff != null;
